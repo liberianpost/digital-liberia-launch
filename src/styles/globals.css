@@ -234,7 +234,7 @@ body {
   animation: gradientShift 6s ease infinite !important;
 }
 
-/* Focus Area Gradients - Each with unique colors */
+/* Focus Area Gradients - Each with unique colors matching feature cards */
 .focus-card-1 {
   background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #6bcf7f 50%, #4d96ff 75%, #9d4edd 100%) !important;
   background-size: 200% 200% !important;
@@ -242,7 +242,7 @@ body {
 }
 
 .focus-card-2 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #00d4aa 100%) !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ff6b6b 100%) !important;
   background-size: 200% 200% !important;
   animation: gradientShift 7s ease infinite !important;
 }
@@ -1034,7 +1034,7 @@ body {
   
   .feature-icon {
     min-width: 60px;
-    height: 60px;
+  height: 60px;
     font-size: 1.5rem;
   }
   
