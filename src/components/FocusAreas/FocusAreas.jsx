@@ -18,7 +18,7 @@ const FocusAreas = () => {
       </div>
       <div className="focus-grid">
         {focusItems.map((item, index) => (
-          <div key={index} className="focus-item">
+          <div key={index} className={`focus-item gradient-card focus-card-${index + 1}`}>
             <i className={item.icon}></i>
             <h4>{item.title}</h4>
             <p>{item.description}</p>
