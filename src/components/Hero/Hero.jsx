@@ -46,7 +46,7 @@ const Hero = () => {
           
           <div className="features-grid">
             {features.map((feature, index) => (
-              <div key={index} className={`feature-item ${index === 0 ? 'hero-gradient-card' : 'white-card'}`}>
+              <div key={index} className={`feature-item gradient-card feature-card-${index + 1}`}>
                 <div className="feature-icon">
                   <i className={feature.icon}></i>
                 </div>
