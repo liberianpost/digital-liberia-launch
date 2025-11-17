@@ -23,9 +23,11 @@ const Header = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-content">
         <div className="logo">
-          <div className="logo-icon">
-            <i className="fas fa-rocket"></i>
-          </div>
+          <img 
+            src="/caa6124f-510b-4738-8000-6907bd32897b.png" 
+            alt="Digital Liberia" 
+            className="logo-image"
+          />
           <span>Digital Liberia</span>
         </div>
         <nav className="nav">
