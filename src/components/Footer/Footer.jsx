@@ -1,22 +1,33 @@
 import React from 'react'
 
 const Footer = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
           <div className="logo">
-            <i className="fas fa-rocket"></i>
+            <img 
+              src="/caa6124f-510b-4738-8000-6907bd32897b.png" 
+              alt="Digital Liberia" 
+              className="logo-image"
+            />
             <span>Digital Liberia</span>
           </div>
           <p>Accelerating Liberia's digital transformation through innovation, collaboration, and strategic investment.</p>
         </div>
         <div className="footer-section">
           <h4>Quick Links</h4>
-          <a href="#hero">About Initiative</a>
-          <a href="#events">Launch Events</a>
-          <a href="#focus">Focus Areas</a>
-          <a href="#contact">Get Involved</a>
+          <button onClick={() => scrollToSection('hero')}>About Initiative</button>
+          <button onClick={() => scrollToSection('events')}>Launch Events</button>
+          <button onClick={() => scrollToSection('focus')}>Focus Areas</button>
+          <button onClick={() => scrollToSection('contact')}>Get Involved</button>
         </div>
         <div className="footer-section">
           <h4>Contact Info</h4>
