@@ -10,7 +10,7 @@ const Hero = () => {
 
   const features = [
     {
-      icon: 'fas fa-calendar-star',
+      icon: 'fas fa-rocket',
       title: 'Launch Event',
       description: 'February 27-28, 2026. Be part of history in the making.'
     },
@@ -46,7 +46,7 @@ const Hero = () => {
           
           <div className="features-grid">
             {features.map((feature, index) => (
-              <div key={index} className="feature-item white-card">
+              <div key={index} className={`feature-item ${index === 0 ? 'hero-gradient-card' : 'white-card'}`}>
                 <div className="feature-icon">
                   <i className={feature.icon}></i>
                 </div>
