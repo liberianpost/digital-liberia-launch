@@ -1,5 +1,4 @@
 import React from 'react'
-import './Events.css'
 
 const Events = () => {
   const events = [
@@ -9,8 +8,7 @@ const Events = () => {
       date: 'February 27, 2026',
       theme: '"Reimagining Liberia\'s Digital Future"',
       description: 'Witness the unveiling of Digital Liberia\'s vision and experience live demonstrations of our core platforms.',
-      features: ['National Address', 'Super App Launch', 'Live Demos'],
-      gradient: 'var(--success-color), var(--info-color)'
+      features: ['National Address', 'Super App Launch', 'Live Demos']
     },
     {
       icon: 'fas fa-lightbulb',
@@ -18,8 +16,7 @@ const Events = () => {
       date: 'February 28, 2026',
       theme: '"Innovation, Partnerships & Opportunities"',
       description: 'Startup pitches, investor meetings, and deep-dive workshops across all digital sectors.',
-      features: ['Startup Pitches', 'Investor Roundtable', 'Sector Workshops'],
-      gradient: 'var(--purple-color), var(--info-color)'
+      features: ['Startup Pitches', 'Investor Roundtable', 'Sector Workshops']
     }
   ]
 
@@ -28,10 +25,7 @@ const Events = () => {
       <div className="action-grid">
         {events.map((event, index) => (
           <div key={index} className="action-card">
-            <div 
-              className="card-icon"
-              style={{background: `linear-gradient(135deg, ${event.gradient})`}}
-            >
+            <div className="card-icon">
               <i className={event.icon}></i>
             </div>
             <h3 className="card-title">{event.title}</h3>

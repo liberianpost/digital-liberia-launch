@@ -1,18 +1,31 @@
 import React, { useState } from 'react'
-import { useForm } from '../../hooks/useForm'
-import { submitInterest } from '../../utils/api'
-import './Contact.css'
 
 const Contact = () => {
-  const { formData, handleChange, resetForm } = useForm({
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     organization: '',
     interest: ''
   })
-
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState({ text: '', type: '' })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      organization: '',
+      interest: ''
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,7 +33,8 @@ const Contact = () => {
     setMessage({ text: '', type: '' })
 
     try {
-      await submitInterest(formData)
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000))
       setMessage({ 
         text: 'Thank you for your interest! We will contact you soon about the Digital Liberia launch.', 
         type: 'success' 
@@ -113,7 +127,7 @@ const Contact = () => {
           
           <button 
             type="submit" 
-            className="btn btn-primary login-submit-btn"
+            className="btn btn-primary"
             disabled={isSubmitting}
           >
             {isSubmitting ? (

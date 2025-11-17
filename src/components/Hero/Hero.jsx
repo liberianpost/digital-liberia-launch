@@ -1,5 +1,4 @@
 import React from 'react'
-import './Hero.css'
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -34,58 +33,60 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
-      <div className="hero-text">
-        <h1>Liberia's Digital Revolution Begins Here</h1>
-        <p>
-          Join us in launching a unified digital ecosystem that will transform 
-          public services, financial inclusion, and innovation across Liberia.
-        </p>
-        
-        <div className="features-grid">
-          {features.map((feature, index) => (
-            <div key={index} className="feature-item">
-              <div className="feature-icon">
-                <i className={feature.icon}></i>
+      <div className="hero-content">
+        <div className="hero-text">
+          <h1>Liberia's Digital Revolution Begins Here</h1>
+          <p>
+            Join us in launching a unified digital ecosystem that will transform 
+            public services, financial inclusion, and innovation across Liberia.
+          </p>
+          
+          <div className="features-grid">
+            {features.map((feature, index) => (
+              <div key={index} className="feature-item">
+                <div className="feature-icon">
+                  <i className={feature.icon}></i>
+                </div>
+                <div className="feature-content">
+                  <h4>{feature.title}</h4>
+                  <p>{feature.description}</p>
+                </div>
               </div>
-              <div className="feature-content">
-                <h4>{feature.title}</h4>
-                <p>{feature.description}</p>
-              </div>
+            ))}
+          </div>
+
+          <div className="hero-actions">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="btn btn-primary"
+            >
+              <i className="fas fa-user-plus"></i>
+              Register Interest
+            </button>
+            <button 
+              onClick={() => scrollToSection('events')}
+              className="btn btn-secondary"
+            >
+              <i className="fas fa-info-circle"></i>
+              Event Details
+            </button>
+          </div>
+        </div>
+
+        <div className="hero-visual">
+          <div className="floating-elements">
+            <div className="floating-card card-1 floating">
+              <i className="fas fa-id-card"></i>
+              <span>Digital ID</span>
             </div>
-          ))}
-        </div>
-
-        <div className="hero-actions">
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="btn btn-primary"
-          >
-            <i className="fas fa-user-plus"></i>
-            Register Interest
-          </button>
-          <button 
-            onClick={() => scrollToSection('events')}
-            className="btn btn-secondary"
-          >
-            <i className="fas fa-info-circle"></i>
-            Event Details
-          </button>
-        </div>
-      </div>
-
-      <div className="hero-visual">
-        <div className="floating-elements">
-          <div className="floating-card card-1 floating">
-            <i className="fas fa-id-card"></i>
-            <span>Digital ID</span>
-          </div>
-          <div className="floating-card card-2 floating" style={{animationDelay: '1s'}}>
-            <i className="fas fa-wallet"></i>
-            <span>LibPay</span>
-          </div>
-          <div className="floating-card card-3 floating" style={{animationDelay: '2s'}}>
-            <i className="fas fa-mobile"></i>
-            <span>Super App</span>
+            <div className="floating-card card-2 floating" style={{animationDelay: '1s'}}>
+              <i className="fas fa-wallet"></i>
+              <span>LibPay</span>
+            </div>
+            <div className="floating-card card-3 floating" style={{animationDelay: '2s'}}>
+              <i className="fas fa-mobile"></i>
+              <span>Super App</span>
+            </div>
           </div>
         </div>
       </div>

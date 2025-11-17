@@ -1,18 +1,23 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header/Header'
-import Home from './pages/Home'
-import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header.jsx'
+import Hero from './components/Hero/Hero.jsx'
+import Events from './components/Events/Events.jsx'
+import FocusAreas from './components/FocusAreas/FocusAreas.jsx'
+import Contact from './components/Contact/Contact.jsx'
+import Footer from './components/Footer/Footer.jsx'
+import './styles/globals.css'
 
 function App() {
   return (
     <div className="app">
       <Header />
       <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Add more routes as needed */}
-        </Routes>
+        <div className="container">
+          <Hero />
+          <Events />
+          <FocusAreas />
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

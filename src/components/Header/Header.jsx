@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './Header.css'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -30,7 +29,7 @@ const Header = () => {
           <span>Digital Liberia</span>
         </div>
         <nav className="nav">
-          <button onClick={() => scrollToSection('about')}>About</button>
+          <button onClick={() => scrollToSection('hero')}>Home</button>
           <button onClick={() => scrollToSection('events')}>Events</button>
           <button onClick={() => scrollToSection('focus')}>Focus Areas</button>
           <button 
