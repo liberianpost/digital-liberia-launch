@@ -35,15 +35,18 @@ const Hero = () => {
     <section className="hero-section">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Liberia's Digital Revolution Begins Here</h1>
-          <p>
+          <h1 className="hero-title">
+            <span className="title-gradient">Liberia's Digital Revolution</span>
+            <span className="title-accent">Begins Here</span>
+          </h1>
+          <p className="hero-subtitle">
             Join us in launching a unified digital ecosystem that will transform 
             public services, financial inclusion, and innovation across Liberia.
           </p>
           
           <div className="features-grid">
             {features.map((feature, index) => (
-              <div key={index} className="feature-item">
+              <div key={index} className="feature-item white-card">
                 <div className="feature-icon">
                   <i className={feature.icon}></i>
                 </div>
@@ -75,15 +78,15 @@ const Hero = () => {
 
         <div className="hero-visual">
           <div className="floating-elements">
-            <div className="floating-card card-1 floating">
+            <div className="floating-card card-1 floating white-card">
               <i className="fas fa-id-card"></i>
               <span>Digital ID</span>
             </div>
-            <div className="floating-card card-2 floating" style={{animationDelay: '1s'}}>
+            <div className="floating-card card-2 floating white-card" style={{animationDelay: '1s'}}>
               <i className="fas fa-wallet"></i>
               <span>LibPay</span>
             </div>
-            <div className="floating-card card-3 floating" style={{animationDelay: '2s'}}>
+            <div className="floating-card card-3 floating white-card" style={{animationDelay: '2s'}}>
               <i className="fas fa-mobile"></i>
               <span>Super App</span>
             </div>
