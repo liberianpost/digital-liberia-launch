@@ -20,8 +20,8 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h4>Contact Info</h4>
-          <p><i className="fas fa-envelope"></i> info@digitalliberia.gov.lr</p>
-          <p><i className="fas fa-phone"></i> +231 XXX-XXXXXX</p>
+          <p><i className="fas fa-envelope"></i> info@digitalliberia.com</p>
+          <p><i className="fas fa-phone"></i> +231 775055817</p>
           <p><i className="fas fa-map-marker-alt"></i> Monrovia, Liberia</p>
         </div>
       </div>
