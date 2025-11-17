@@ -1,0 +1,25 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  --premium-gradient: linear-gradient(135deg, #8360c3 0%, #2ebf91 100%);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --success-color: #00d4aa;
+  --warning-color: #ffd166;
+  --error-color: #ef476f;
+  --info-color: #118ab2;
+  --purple-color: #7209b7;
+  --text-dark: #1a1a1a;
+  --text-light: #6c757d;
+  --white: #ffffff;
+  --black: #000000;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 30px 60px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 50px 100px rgba(0, 0, 0, 0.2);
+  --border-radius: 20px;
+  --border-radius-lg: 30px;
+  --border-radius-xl: 40px;
+}
