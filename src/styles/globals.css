@@ -209,34 +209,110 @@ body {
   line-height: 1.6;
 }
 
-/* Hero Gradient Card Styles */
-.hero-gradient-card {
+/* Feature Card Gradients - Each with unique colors */
+.feature-card-1 {
   background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #6bcf7f 50%, #4d96ff 75%, #9d4edd 100%) !important;
-  color: var(--white) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: var(--shadow) !important;
   background-size: 200% 200% !important;
   animation: gradientShift 8s ease infinite !important;
 }
 
-.hero-gradient-card h4 {
+.feature-card-2 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ff6b6b 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 7s ease infinite !important;
+}
+
+.feature-card-3 {
+  background: linear-gradient(135deg, #00d4aa 0%, #118ab2 25%, #7209b7 50%, #ffd166 75%, #ef476f 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 9s ease infinite !important;
+}
+
+.feature-card-4 {
+  background: linear-gradient(135deg, #8360c3 0%, #2ebf91 25%, #ff6b6b 50%, #4d96ff 75%, #ffd93d 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 6s ease infinite !important;
+}
+
+/* Focus Area Gradients - Each with unique colors */
+.focus-card-1 {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #6bcf7f 50%, #4d96ff 75%, #9d4edd 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 8s ease infinite !important;
+}
+
+.focus-card-2 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #00d4aa 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 7s ease infinite !important;
+}
+
+.focus-card-3 {
+  background: linear-gradient(135deg, #00d4aa 0%, #118ab2 25%, #7209b7 50%, #ffd166 75%, #ef476f 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 9s ease infinite !important;
+}
+
+.focus-card-4 {
+  background: linear-gradient(135deg, #8360c3 0%, #2ebf91 25%, #ff6b6b 50%, #4d96ff 75%, #ffd93d 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 6s ease infinite !important;
+}
+
+.focus-card-5 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 25%, #667eea 50%, #00d4aa 75%, #ffd93d 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 8.5s ease infinite !important;
+}
+
+.focus-card-6 {
+  background: linear-gradient(135deg, #2ebf91 0%, #8360c3 25%, #ff6b6b 50%, #4d96ff 75%, #ffd166 100%) !important;
+  background-size: 200% 200% !important;
+  animation: gradientShift 7.5s ease infinite !important;
+}
+
+/* Gradient Card Base Styles */
+.gradient-card {
+  color: var(--white) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: var(--shadow) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.gradient-card:hover::before {
+  left: 100%;
+}
+
+.gradient-card h4 {
   color: var(--white) !important;
   font-weight: 800 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-gradient-card p {
+.gradient-card p {
   color: rgba(255, 255, 255, 0.95) !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.hero-gradient-card .feature-icon {
+.gradient-card .feature-icon {
   background: rgba(255, 255, 255, 0.2) !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
 }
 
-.hero-gradient-card .feature-icon i {
+.gradient-card .feature-icon i {
   color: var(--white) !important;
   background: none !important;
   -webkit-text-fill-color: var(--white) !important;
@@ -315,7 +391,6 @@ body {
 
 .feature-icon {
   font-size: 1.8rem;
-  background: linear-gradient(135deg, var(--success-color), var(--info-color));
   padding: 1rem;
   border-radius: 16px;
   display: flex;
@@ -323,7 +398,6 @@ body {
   justify-content: center;
   min-width: 70px;
   height: 70px;
-  box-shadow: 0 8px 20px rgba(0, 212, 170, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -537,7 +611,6 @@ body {
 }
 
 .focus-item {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 25%, #6bcf7f 50%, #4d96ff 75%, #9d4edd 100%);
   padding: 2.5rem 2rem;
   border-radius: var(--border-radius);
   text-align: center;
@@ -545,9 +618,24 @@ body {
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   box-shadow: var(--shadow);
-  background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
   color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.focus-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.focus-item:hover::before {
+  left: 100%;
 }
 
 .focus-item:hover {
