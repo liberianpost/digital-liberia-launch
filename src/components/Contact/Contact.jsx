@@ -33,16 +33,37 @@ const Contact = () => {
     setMessage({ text: '', type: '' })
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      setMessage({ 
-        text: 'Thank you for your interest! We will contact you soon about the Digital Liberia launch.', 
-        type: 'success' 
+      const response = await fetch('/launch-interest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          organization: formData.organization,
+          interest: formData.interest
+        })
       })
-      resetForm()
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        setMessage({ 
+          text: data.message, 
+          type: 'success' 
+        })
+        resetForm()
+      } else {
+        setMessage({ 
+          text: data.message || 'There was an error submitting your interest. Please try again.', 
+          type: 'error' 
+        })
+      }
     } catch (error) {
+      console.error('Submission error:', error)
       setMessage({ 
-        text: 'There was an error submitting your interest. Please try again.', 
+        text: 'There was an error submitting your interest. Please check your connection and try again.', 
         type: 'error' 
       })
     } finally {
@@ -78,6 +99,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Enter your full name"
+              disabled={isSubmitting}
             />
           </div>
           
@@ -91,6 +113,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Enter your email"
+              disabled={isSubmitting}
             />
           </div>
           
@@ -103,6 +126,7 @@ const Contact = () => {
               value={formData.organization}
               onChange={handleChange}
               placeholder="Your company or organization"
+              disabled={isSubmitting}
             />
           </div>
           
@@ -114,6 +138,7 @@ const Contact = () => {
               value={formData.interest}
               onChange={handleChange}
               required
+              disabled={isSubmitting}
             >
               <option value="">Select your interest</option>
               <option value="partner">Partnership</option>
