@@ -35,7 +35,10 @@ const Contact = () => {
     try {
       console.log('Submitting form data:', formData);
       
-      const response = await fetch('/launch-interest', {
+      // Use your actual backend domain
+      const API_BASE_URL = 'https://libpayapp.liberianpost.com:8081';
+      
+      const response = await fetch(`${API_BASE_URL}/launch-interest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,18 +53,19 @@ const Contact = () => {
 
       console.log('Response status:', response.status);
 
-      // Check if response is OK before parsing JSON
-      if (!response.ok) {
-        // If response is not OK, try to get error message
-        const errorText = await response.text();
-        console.error('Server error response:', errorText);
-        throw new Error(`Server error: ${response.status} - ${errorText}`);
+      // Get the response text first to handle both JSON and non-JSON responses
+      const responseText = await response.text();
+      console.log('Raw response:', responseText);
+
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('JSON parse error:', parseError);
+        throw new Error(`Server returned invalid JSON: ${responseText.substring(0, 100)}`);
       }
 
-      const data = await response.json();
-      console.log('Response data:', data);
-
-      if (data.success) {
+      if (response.ok && data.success) {
         setMessage({ 
           text: data.message, 
           type: 'success' 
@@ -79,14 +83,14 @@ const Contact = () => {
       // Provide more specific error messages
       let errorMessage = 'There was an error submitting your interest. Please check your connection and try again.';
       
-      if (error.message.includes('Server error: 400')) {
-        errorMessage = 'Please check that all required fields are filled correctly.';
-      } else if (error.message.includes('Server error: 409')) {
-        errorMessage = 'This email has already been registered for the launch.';
-      } else if (error.message.includes('Server error: 500')) {
-        errorMessage = 'Server error. Please try again later.';
-      } else if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch')) {
+      if (error.message.includes('Server returned invalid JSON')) {
+        errorMessage = 'Server configuration error. Please contact support.';
+      } else if (error.message.includes('Failed to fetch')) {
+        errorMessage = 'Cannot connect to server. Please check if the backend is running.';
+      } else if (error.message.includes('NetworkError')) {
         errorMessage = 'Network error. Please check your internet connection.';
+      } else if (error.message.includes('CORS')) {
+        errorMessage = 'Cross-origin request blocked. Please contact support.';
       }
       
       setMessage({ 
