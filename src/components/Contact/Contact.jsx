@@ -33,6 +33,8 @@ const Contact = () => {
     setMessage({ text: '', type: '' })
 
     try {
+      console.log('Submitting form data:', formData);
+      
       const response = await fetch('/launch-interest', {
         method: 'POST',
         headers: {
@@ -44,30 +46,55 @@ const Contact = () => {
           organization: formData.organization,
           interest: formData.interest
         })
-      })
+      });
 
-      const data = await response.json()
+      console.log('Response status:', response.status);
 
-      if (response.ok && data.success) {
+      // Check if response is OK before parsing JSON
+      if (!response.ok) {
+        // If response is not OK, try to get error message
+        const errorText = await response.text();
+        console.error('Server error response:', errorText);
+        throw new Error(`Server error: ${response.status} - ${errorText}`);
+      }
+
+      const data = await response.json();
+      console.log('Response data:', data);
+
+      if (data.success) {
         setMessage({ 
           text: data.message, 
           type: 'success' 
-        })
-        resetForm()
+        });
+        resetForm();
       } else {
         setMessage({ 
           text: data.message || 'There was an error submitting your interest. Please try again.', 
           type: 'error' 
-        })
+        });
       }
     } catch (error) {
-      console.error('Submission error:', error)
+      console.error('Submission error:', error);
+      
+      // Provide more specific error messages
+      let errorMessage = 'There was an error submitting your interest. Please check your connection and try again.';
+      
+      if (error.message.includes('Server error: 400')) {
+        errorMessage = 'Please check that all required fields are filled correctly.';
+      } else if (error.message.includes('Server error: 409')) {
+        errorMessage = 'This email has already been registered for the launch.';
+      } else if (error.message.includes('Server error: 500')) {
+        errorMessage = 'Server error. Please try again later.';
+      } else if (error.message.includes('NetworkError') || error.message.includes('Failed to fetch')) {
+        errorMessage = 'Network error. Please check your internet connection.';
+      }
+      
       setMessage({ 
-        text: 'There was an error submitting your interest. Please check your connection and try again.', 
+        text: errorMessage, 
         type: 'error' 
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
