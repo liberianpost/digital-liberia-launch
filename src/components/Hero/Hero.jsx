@@ -8,6 +8,10 @@ const Hero = () => {
     }
   }
 
+  const handleDonateClick = () => {
+    window.open('https://www.gofundme.com/f/support-digital-liberias-tech-revolution/cl/s?utm_campaign=fp_sharesheet&utm_medium=customer&utm_source=copy_link&lang=en_GB&ts=1763551323', '_blank')
+  }
+
   const features = [
     {
       icon: 'fas fa-rocket',
@@ -25,14 +29,14 @@ const Hero = () => {
       description: 'Secure national digital identity and payment systems.'
     },
     {
-      icon: 'fas fa-handshake',
-      title: 'Partnerships',
-      description: 'Collaborate with innovators, investors, and government.'
+      icon: 'fas fa-heart',
+      title: 'Support Us',
+      description: 'Help fuel the digital revolution with your contribution.'
     }
   ]
 
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="hero">
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
@@ -73,6 +77,13 @@ const Hero = () => {
               <i className="fas fa-info-circle"></i>
               Event Details
             </button>
+            <button 
+              onClick={handleDonateClick}
+              className="btn btn-donate"
+            >
+              <i className="fas fa-heart"></i>
+              Support Our Mission
+            </button>
           </div>
         </div>
 
@@ -89,6 +100,10 @@ const Hero = () => {
             <div className="floating-card card-3 floating white-card" style={{animationDelay: '2s'}}>
               <i className="fas fa-mobile"></i>
               <span>Super App</span>
+            </div>
+            <div className="floating-card card-4 floating white-card" style={{animationDelay: '1.5s'}}>
+              <i className="fas fa-heart"></i>
+              <span>Support</span>
             </div>
           </div>
         </div>
