@@ -176,7 +176,7 @@ body {
   background-clip: text;
 }
 
-/* Donate Button Special Styles */
+/* Donate Button Special Styles - FIXED TEXT ISSUE */
 .donate-btn {
   background: var(--donate-gradient) !important;
   padding: 0.8rem 1.5rem !important;
@@ -186,12 +186,18 @@ body {
   font-weight: 700 !important;
   color: var(--white) !important;
   text-shadow: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 .donate-btn:hover {
   transform: translateY(-3px) scale(1.05) !important;
   box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6) !important;
   color: var(--white) !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 /* Mobile Menu Button */
@@ -283,12 +289,18 @@ body {
   box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
   color: var(--white) !important;
   text-shadow: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 .mobile-nav .donate-btn:hover {
   transform: translateX(0) scale(1.02) !important;
   background: var(--donate-gradient) !important;
   color: var(--white) !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 .mobile-nav .btn-secondary {
@@ -302,12 +314,18 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
   color: var(--white) !important;
   font-weight: 700 !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 .mobile-nav .btn-secondary:hover {
   transform: translateX(0) scale(1.02) !important;
   background: rgba(255, 255, 255, 0.15) !important;
   color: var(--white) !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 /* Mobile Menu Overlay */
@@ -701,11 +719,17 @@ body {
   color: var(--white);
   border: none;
   box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 .btn-donate:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 /* Action Grid */
@@ -820,6 +844,9 @@ body {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 600;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
 }
 
 /* Focus Areas */
