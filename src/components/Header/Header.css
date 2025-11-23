@@ -1,5 +1,5 @@
 .header {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(25px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding: 1.2rem 0;
@@ -10,7 +10,7 @@
 }
 
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(30px);
 }
 
@@ -63,7 +63,7 @@
 .nav button, .desktop-nav button {
   background: none;
   border: none;
-  color: var(--text-dark);
+  color: var(--white);
   font-weight: 800;
   transition: all 0.3s ease;
   opacity: 0.9;
@@ -74,12 +74,19 @@
   align-items: center;
   gap: 0.5rem;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nav button:hover, .desktop-nav button:hover {
   opacity: 1;
   transform: translateY(-2px);
-  color: var(--text-dark);
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Donate Button Special Styles */
@@ -105,7 +112,7 @@
   display: none;
   background: none;
   border: none;
-  color: var(--text-dark);
+  color: var(--white);
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -115,7 +122,7 @@
 }
 
 .mobile-menu-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile Navigation */
@@ -125,9 +132,9 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(30px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   flex-direction: column;
   padding: 1rem 2rem;
   gap: 0.5rem;
@@ -135,7 +142,7 @@
   opacity: 0;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-nav.active {
@@ -147,7 +154,7 @@
 .mobile-nav button {
   background: none;
   border: none;
-  color: var(--text-dark);
+  color: var(--white);
   padding: 1rem 0;
   text-align: left;
   font-size: 1.1rem;
@@ -156,9 +163,12 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .mobile-nav button:last-child {
@@ -167,8 +177,11 @@
 
 .mobile-nav button:hover {
   transform: translateX(10px);
-  color: var(--text-dark);
-  background: rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding-left: 1rem;
 }
@@ -192,22 +205,22 @@
 }
 
 .mobile-nav .btn-secondary {
-  background: rgba(0, 0, 0, 0.1) !important;
-  border: 2px solid rgba(0, 0, 0, 0.3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
   border-radius: 15px !important;
   padding: 1rem !important;
   text-align: center !important;
   justify-content: center !important;
   margin-top: 0.5rem !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
-  color: var(--text-dark) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+  color: var(--white) !important;
   font-weight: 700 !important;
 }
 
 .mobile-nav .btn-secondary:hover {
   transform: translateX(0) scale(1.02) !important;
-  background: rgba(0, 0, 0, 0.15) !important;
-  color: var(--text-dark) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: var(--white) !important;
 }
 
 /* Mobile Menu Overlay */
